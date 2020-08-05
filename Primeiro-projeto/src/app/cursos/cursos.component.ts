@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CursosService } from './cursos.service';
+
 @Component({
   selector: 'app-cursos',
   templateUrl: './cursos.component.html',
@@ -9,18 +11,13 @@ export class CursosComponent implements OnInit {
 
   nomePortal: string;
 
-  cursos: string[] = [
-                      'Java', 
-                      'React',
-                      'JavaScript',
-                      'Node',
-                      'Php',
-                      'Ruby'
-                    ]
+  cursos: string[];
 
-  constructor() { 
+  constructor(private CursosService: CursosService) { 
 
     this.nomePortal = "http://Deveria_ser_um_link_dinamico_mas_ta_ok.jazon";
+
+    this.cursos = this.CursosService.getCursos();
 
   }
 
