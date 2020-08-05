@@ -7,7 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CursosComponent implements OnInit {
 
-  constructor() { }
+  nomePortal: string;
+
+  cursos: string[] = [
+                      'Java', 
+                      'React',
+                      'JavaScript',
+                      'Node',
+                      'Php',
+                      'Ruby'
+                    ]
+
+  constructor() { 
+
+    this.nomePortal = "http://Deveria_ser_um_link_dinamico_mas_ta_ok.jazon";
+
+  }
 
   ngOnInit(): void {
   }
