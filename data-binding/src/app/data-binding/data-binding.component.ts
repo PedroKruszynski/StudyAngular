@@ -13,6 +13,8 @@ export class DataBindingComponent implements OnInit {
 
   urlImage: string = 'https://picsum.photos/200/300';
 
+  valorAtual: string = '';
+
   getValor() {
 
     return 1;
@@ -25,6 +27,17 @@ export class DataBindingComponent implements OnInit {
 
   }
   
+  botaoClicado() {
+
+    alert('clicou no botao');
+
+  }
+
+  onKeyUp(event: KeyboardEvent) {
+
+    this.valorAtual = (<HTMLInputElement>event.target).value;
+
+  }
 
   constructor() { }
 
