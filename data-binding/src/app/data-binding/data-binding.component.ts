@@ -15,6 +15,10 @@ export class DataBindingComponent implements OnInit {
 
   valorAtual: string = '';
 
+  valorSalvo: string = '';
+
+  isMouseHouver: boolean = false;
+
   getValor() {
 
     return 1;
@@ -36,6 +40,18 @@ export class DataBindingComponent implements OnInit {
   onKeyUp(event: KeyboardEvent) {
 
     this.valorAtual = (<HTMLInputElement>event.target).value;
+
+  }
+
+  salvarValor(value) {
+
+    this.valorSalvo = value;
+
+  }
+
+  onMouseHouverOut() {
+
+    this.isMouseHouver = !this.isMouseHouver;
 
   }
 
